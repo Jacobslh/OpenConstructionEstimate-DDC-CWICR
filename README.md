@@ -168,6 +168,7 @@
 - [Consulting & Training](#consulting--training) — Professional services
 - [Contributing](#contributing) — Submit your workflows
 - [License](#license) — Dual (CC BY 4.0 data / Apache-2.0 code)
+- [Security](#security) — Responsible disclosure
 - [Support the Project](#support-the-project) — Sponsor & donate
 - [🤖 AI Instructions](#ai-instructions) — Documentation for AI assistants
 
@@ -1692,14 +1693,16 @@ industry compliance documentation.
 
 Contact: [info@datadrivenconstruction.io](mailto:info@datadrivenconstruction.io).
 
-### Security
+## Security
 
-Do not open public GitHub issues for security vulnerabilities.
+**Do not open public GitHub issues for security vulnerabilities.**
 Report privately via
 [GitHub Security Advisories](https://github.com/datadrivenconstruction/OpenConstructionEstimate-DDC-CWICR/security/advisories/new)
 or by email to `info@datadrivenconstruction.io`. See
 [SECURITY.md](./SECURITY.md) for the full coordinated-disclosure
-policy.
+policy, response timelines, scope, supply-chain-integrity
+posture (Git LFS hashes), and alignment with EU Regulation
+2024/2847 (Cyber Resilience Act) reporting obligations.
 
 ## Support the Project
 

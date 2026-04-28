@@ -1,0 +1,4 @@
+DDC CWICR placeholder for CS_PRAGUE_workitems_costs_resources_DDC_CWICR_FORMATTED.xlsx
+This placeholder ships the on-disk metadata for the CS track only.
+Regenerate the real artefact from the parquet via the country-track-builder
+pipeline (see DATA_DICTIONARY.md).

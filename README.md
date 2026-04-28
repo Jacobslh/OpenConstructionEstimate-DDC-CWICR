@@ -19,8 +19,8 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Work_Items-55,719-2563eb?style=for-the-badge" alt="Work Items">
   <img src="https://img.shields.io/badge/Resources-27,672-059669?style=for-the-badge" alt="Resources">
-  <img src="https://img.shields.io/badge/Languages-11-d97706?style=for-the-badge" alt="Languages">
-  <img src="https://img.shields.io/badge/Countries-12+-dc2626?style=for-the-badge" alt="Countries">
+  <img src="https://img.shields.io/badge/Languages-22-d97706?style=for-the-badge" alt="Languages">
+  <img src="https://img.shields.io/badge/Countries-30-dc2626?style=for-the-badge" alt="Countries">
 </div>
 
 <div align="center">
@@ -1146,11 +1146,39 @@ All Qdrant snapshots are included directly in the corresponding language folders
 | 🇺🇸 USA         | USD            | `ddc_usa_usd`              | `US___DDC_CWICR/USA_USD_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`           | 55,719  |
 | 🇨🇳 Chinese     | Shanghai       | `ddc_zh_shanghai`          | `ZH___DDC_CWICR/ZH_SHANGHAI_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`       | 55,719  |
 
+#### Derived tracks (19) — built by `0_Workflow and Pipelines CWICR/python/11-country-track-builder/`
+
+Norms (labour hours, machine hours, resource quantities) are bytewise-identical to the source track; only prices and translatable text differ. `rate_code` and `resource_code` are stable across all tracks.
+
+| Language        | Region          | Qdrant Collection           | Snapshot File                                                                                            | Source       |
+|-----------------|-----------------|-----------------------------|----------------------------------------------------------------------------------------------------------|--------------|
+| 🇦🇺 English     | Sydney          | `ddc_au_sydney`             | `AU___DDC_CWICR/AU_SYDNEY_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                  | UK_GBP       |
+| 🇧🇬 Bulgarian   | Sofia           | `ddc_bg_sofia`              | `BG___DDC_CWICR/BG_SOFIA_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                   | DE_BERLIN    |
+| 🇨🇿 Czech       | Prague          | `ddc_cs_prague`             | `CS___DDC_CWICR/CS_PRAGUE_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                  | DE_BERLIN    |
+| 🇭🇷 Croatian    | Zagreb          | `ddc_hr_zagreb`             | `HR___DDC_CWICR/HR_ZAGREB_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                  | DE_BERLIN    |
+| 🇮🇩 Indonesian  | Jakarta         | `ddc_id_jakarta`            | `ID___DDC_CWICR/ID_JAKARTA_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                 | UK_GBP       |
+| 🇮🇹 Italian     | Rome            | `ddc_it_rome`               | `IT___DDC_CWICR/IT_ROME_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                    | DE_BERLIN    |
+| 🇯🇵 Japanese    | Tokyo           | `ddc_ja_tokyo`              | `JA___DDC_CWICR/JA_TOKYO_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                   | UK_GBP       |
+| 🇰🇷 Korean      | Seoul           | `ddc_ko_seoul`              | `KO___DDC_CWICR/KO_SEOUL_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                   | UK_GBP       |
+| 🇲🇽 Spanish     | Mexico City     | `ddc_mx_mexicocity`         | `MX___DDC_CWICR/MX_MEXICOCITY_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`              | SP_BARCELONA |
+| 🇳🇬 English     | Lagos           | `ddc_ng_lagos`              | `NG___DDC_CWICR/NG_LAGOS_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                   | UK_GBP       |
+| 🇳🇱 Dutch       | Amsterdam       | `ddc_nl_amsterdam`          | `NL___DDC_CWICR/NL_AMSTERDAM_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`               | DE_BERLIN    |
+| 🇳🇿 English     | Auckland        | `ddc_nz_auckland`           | `NZ___DDC_CWICR/NZ_AUCKLAND_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                | UK_GBP       |
+| 🇵🇱 Polish      | Warsaw          | `ddc_pl_warsaw`             | `PL___DDC_CWICR/PL_WARSAW_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                  | DE_BERLIN    |
+| 🇷🇴 Romanian    | Bucharest       | `ddc_ro_bucharest`          | `RO___DDC_CWICR/RO_BUCHAREST_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`               | DE_BERLIN    |
+| 🇸🇪 Swedish     | Stockholm       | `ddc_sv_stockholm`          | `SV___DDC_CWICR/SV_STOCKHOLM_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`               | DE_BERLIN    |
+| 🇹🇭 Thai        | Bangkok         | `ddc_th_bangkok`            | `TH___DDC_CWICR/TH_BANGKOK_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                 | UK_GBP       |
+| 🇹🇷 Turkish     | Istanbul        | `ddc_tr_istanbul`           | `TR___DDC_CWICR/TR_ISTANBUL_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                | DE_BERLIN    |
+| 🇻🇳 Vietnamese  | Hanoi           | `ddc_vi_hanoi`              | `VI___DDC_CWICR/VI_HANOI_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`                   | UK_GBP       |
+| 🇿🇦 English     | Johannesburg    | `ddc_za_johannesburg`       | `ZA___DDC_CWICR/ZA_JOHANNESBURG_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`            | UK_GBP       |
+
 All collections use **3072-dimensional OpenAI embeddings** with full payload metadata.
 
 ### Collections
 
-🇸🇦 `ddc_ar_dubai` · 🇩🇪 `ddc_de_berlin` · 🇬🇧 `ddc_en_toronto` · 🇪🇸 `ddc_sp_barcelona` · 🇫🇷 `ddc_fr_paris` · 🇮🇳 `ddc_hi_mumbai` · 🇧🇷 `ddc_pt_saopaulo` · 🇷🇺 `ddc_ru_stpetersburg` · 🇬🇧 `ddc_uk_gbp` · 🇺🇸 `ddc_usa_usd` · 🇨🇳 `ddc_zh_shanghai`
+**Shipped (11):** 🇸🇦 `ddc_ar_dubai` · 🇩🇪 `ddc_de_berlin` · 🇨🇦 `ddc_en_toronto` · 🇪🇸 `ddc_sp_barcelona` · 🇫🇷 `ddc_fr_paris` · 🇮🇳 `ddc_hi_mumbai` · 🇧🇷 `ddc_pt_saopaulo` · 🇷🇺 `ddc_ru_stpetersburg` · 🇬🇧 `ddc_uk_gbp` · 🇺🇸 `ddc_usa_usd` · 🇨🇳 `ddc_zh_shanghai`
+
+**Derived (19):** 🇦🇺 `ddc_au_sydney` · 🇧🇬 `ddc_bg_sofia` · 🇨🇿 `ddc_cs_prague` · 🇭🇷 `ddc_hr_zagreb` · 🇮🇩 `ddc_id_jakarta` · 🇮🇹 `ddc_it_rome` · 🇯🇵 `ddc_ja_tokyo` · 🇰🇷 `ddc_ko_seoul` · 🇲🇽 `ddc_mx_mexicocity` · 🇳🇬 `ddc_ng_lagos` · 🇳🇱 `ddc_nl_amsterdam` · 🇳🇿 `ddc_nz_auckland` · 🇵🇱 `ddc_pl_warsaw` · 🇷🇴 `ddc_ro_bucharest` · 🇸🇪 `ddc_sv_stockholm` · 🇹🇭 `ddc_th_bangkok` · 🇹🇷 `ddc_tr_istanbul` · 🇻🇳 `ddc_vi_hanoi` · 🇿🇦 `ddc_za_johannesburg`
 
 ### Docker Deployment
 

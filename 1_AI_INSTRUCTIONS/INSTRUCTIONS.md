@@ -1,6 +1,6 @@
 # DDC CWICR - AI Assistant Instructions
 
-> **DDC CWICR** (Construction Work Items, Components & Resources) is an open-source multilingual construction cost database with 55,719 work items and 27,672 resources across 11 languages, powered by pre-computed OpenAI embeddings for semantic search.
+> **DDC CWICR** (Construction Work Items, Components & Resources) is an open-source multilingual construction cost database with 55,719 work items and 27,672 resources across **30 country tracks in 23 languages**, powered by pre-computed OpenAI embeddings for semantic search.
 
 ## Quick Start
 
@@ -34,8 +34,9 @@ results = client.search(
 |--------|-------|
 | Work Items | 55,719 |
 | Resources | 27,672 |
-| Languages | 11 |
-| Data Fields | 85 |
+| Country Tracks | 30 (11 shipped + 19 derived) |
+| Languages | 23 unique |
+| Data Fields | 93 |
 | Embedding Dimensions | 3,072 (OpenAI text-embedding-3-large) |
 
 ## Available Formats
@@ -49,19 +50,49 @@ results = client.search(
 
 ## Languages & Regional Pricing
 
-| Code | Language | Region | Currency | Collection | Snapshot Path |
-|------|----------|--------|----------|------------|---------------|
-| `AR` | Arabic | Dubai | AED | `ddc_ar_dubai` | `AR___DDC_CWICR/AR_DUBAI_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `ZH` | Chinese | Shanghai | CNY | `ddc_zh_shanghai` | `ZH___DDC_CWICR/ZH_SHANGHAI_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `DE` | German | Berlin | EUR | `ddc_de_berlin` | `DE___DDC_CWICR/DE_BERLIN_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `EN` | English | Toronto | CAD | `ddc_en_toronto` | `EN___DDC_CWICR/EN_TORONTO_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `ES` | Spanish | Barcelona | EUR | `ddc_sp_barcelona` | `ES___DDC_CWICR/ES_BARCELONA_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `FR` | French | Paris | EUR | `ddc_fr_paris` | `FR___DDC_CWICR/FR_PARIS_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `HI` | Hindi | Mumbai | INR | `ddc_hi_mumbai` | `HI___DDC_CWICR/HI_MUMBAI_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `PT` | Portuguese | São Paulo | BRL | `ddc_pt_saopaulo` | `PT___DDC_CWICR/PT_SAOPAULO_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `RU` | Russian | St. Petersburg | RUB | `ddc_ru_stpetersburg` | `RU___DDC_CWICR/RU_STPETERSBURG_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `US` | English | USA | USD | `ddc_usa_usd` | `US___DDC_CWICR/US_USD_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
-| `UK` | English | UK | GBP | `ddc_uk_gbp` | `UK___DDC_CWICR/UK_GBP_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot` |
+### Shipped tracks (11)
+
+| Code | Language | Region | Currency | Collection |
+|------|----------|--------|----------|------------|
+| `AR` | Arabic | Dubai | AED | `ddc_ar_dubai` |
+| `DE` | German | Berlin | EUR | `ddc_de_berlin` |
+| `EN` | English | Toronto | CAD | `ddc_en_toronto` |
+| `ES` | Spanish | Barcelona | EUR | `ddc_sp_barcelona` |
+| `FR` | French | Paris | EUR | `ddc_fr_paris` |
+| `HI` | Hindi | Mumbai | INR | `ddc_hi_mumbai` |
+| `PT` | Portuguese | São Paulo | BRL | `ddc_pt_saopaulo` |
+| `RU` | Russian | St. Petersburg | RUB | `ddc_ru_stpetersburg` |
+| `UK` | English | London | GBP | `ddc_uk_gbp` |
+| `US` | English | USA | USD | `ddc_usa_usd` |
+| `ZH` | Chinese | Shanghai | CNY | `ddc_zh_shanghai` |
+
+### Derived tracks (19) — built by `0_Workflow and Pipelines CWICR/python/11-country-track-builder/`
+
+| Code | Language | Region | Currency | Collection | Source track |
+|------|----------|--------|----------|------------|--------------|
+| `AU` | English | Sydney | AUD | `ddc_au_sydney` | UK_GBP |
+| `BG` | Bulgarian | Sofia | BGN | `ddc_bg_sofia` | DE_BERLIN |
+| `CS` | Czech | Prague | CZK | `ddc_cs_prague` | DE_BERLIN |
+| `HR` | Croatian | Zagreb | EUR | `ddc_hr_zagreb` | DE_BERLIN |
+| `ID` | Indonesian | Jakarta | IDR | `ddc_id_jakarta` | UK_GBP |
+| `IT` | Italian | Rome | EUR | `ddc_it_rome` | DE_BERLIN |
+| `JA` | Japanese | Tokyo | JPY | `ddc_ja_tokyo` | UK_GBP |
+| `KO` | Korean | Seoul | KRW | `ddc_ko_seoul` | UK_GBP |
+| `MX` | Spanish | Mexico City | MXN | `ddc_mx_mexicocity` | SP_BARCELONA |
+| `NG` | English | Lagos | NGN | `ddc_ng_lagos` | UK_GBP |
+| `NL` | Dutch | Amsterdam | EUR | `ddc_nl_amsterdam` | DE_BERLIN |
+| `NZ` | English | Auckland | NZD | `ddc_nz_auckland` | UK_GBP |
+| `PL` | Polish | Warsaw | PLN | `ddc_pl_warsaw` | DE_BERLIN |
+| `RO` | Romanian | Bucharest | RON | `ddc_ro_bucharest` | DE_BERLIN |
+| `SV` | Swedish | Stockholm | SEK | `ddc_sv_stockholm` | DE_BERLIN |
+| `TH` | Thai | Bangkok | THB | `ddc_th_bangkok` | UK_GBP |
+| `TR` | Turkish | Istanbul | TRY | `ddc_tr_istanbul` | DE_BERLIN |
+| `VI` | Vietnamese | Hanoi | VND | `ddc_vi_hanoi` | UK_GBP |
+| `ZA` | English | Johannesburg | ZAR | `ddc_za_johannesburg` | UK_GBP |
+
+Snapshot path pattern for any track: `<CODE>___DDC_CWICR/<REGION>_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot`.
+
+Derived tracks share the same `rate_code` and `resource_code` as their source — these are the alignment keys for cross-track comparison. Norms (labour hours, machine hours, resource quantities) are identical across all tracks; only prices and translatable text vary by region.
 
 ## Core Methodology
 

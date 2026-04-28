@@ -1,0 +1,4 @@
+DDC CWICR placeholder for DDC_CWICR_AU_SYDNEY_Catalog.xlsx
+This placeholder ships the on-disk metadata for the AU track only.
+Regenerate the real artefact from the parquet via the country-track-builder
+pipeline (see DATA_DICTIONARY.md).

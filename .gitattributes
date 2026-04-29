@@ -1,3 +1,8 @@
 *.xlsx filter=lfs diff=lfs merge=lfs -text
 *.pdf filter=lfs diff=lfs merge=lfs -text
 *.snapshot filter=lfs diff=lfs merge=lfs -text
+
+# Per-track Catalog xlsx (~1 MB) and TABULAR readme pdf (placeholder
+# text) stay in regular git — small enough to avoid LFS quota.
+**/DDC_CWICR_*_Catalog.xlsx -filter -diff -merge binary
+**/README_DDC_CWICR_TABULAR_*.pdf -filter -diff -merge binary

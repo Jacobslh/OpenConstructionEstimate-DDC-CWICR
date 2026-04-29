@@ -342,7 +342,13 @@ _PASSTHROUGH_PURE_UNIT_RE = _re.compile(
     rf"^\s*(?:{_PASSTHROUGH_UNIT_BODY})\s*$", _re.UNICODE,
 )
 _PASSTHROUGH_CODE_RE = _re.compile(
-    r"^[A-Z0-9][A-Z0-9\-/×x*.,\s]*$", _re.UNICODE,
+    r"^[A-Z0-9][A-Z0-9\-/×x*.,;:()\s]*$", _re.UNICODE,
+)
+# Code-like list with mixed-case suffix segments (e.g. "PE-2105MA",
+# "MABp-4G"). Segments must start with uppercase, may contain digits and
+# trailing lowercase suffix. Joiners: comma, semicolon, slash, dash, space.
+_PASSTHROUGH_CODE_LIST_RE = _re.compile(
+    r"^[A-Z0-9][A-Za-z0-9\-/×x*.,;:()\s\"']*$", _re.UNICODE,
 )
 # Pipe-size / nominal-diameter / pressure-class specs (DN-200, Du 1000 mm, PN16)
 _PASSTHROUGH_PIPE_SPEC_RE = _re.compile(
@@ -363,6 +369,10 @@ _PASSTHROUGH_LOANWORDS = frozenset({
     "lap", "lapis", "m farm", "100 ecm", "half-set", "100 knots",
     "camera", "cabin", "press", "stand", "horizontal", "vertical",
     "manipulator", "brander", "patchuk",
+    # Domain-universal abbreviations / unit-like tokens
+    "nr", "pcs", "pcs.", "stk", "stk.", "no.", "ea", "ea.",
+    # Decimeter SI variants not in pure-unit table
+    "dm", "dm2", "dm3",
     # Germanic cognates (DE→SV/NL/DA — valid in all)
     "komplett", "foto", "installation", "system", "punkt", "nummer",
     "sektion", "ring", "kanal", "stativ", "knoten", "rez", "etui",
@@ -397,6 +407,13 @@ def _is_passthrough_value(s: str) -> bool:
         return True
     if len(s) <= 30 and _PASSTHROUGH_CODE_RE.match(s):
         return True
+    # Long code lists (uppercase-leading, max 200 chars) — equipment model
+    # enumerations like "S-100, SK-100, S-104" or "VKTN, GIM-3, IKS, VKS".
+    if len(s) <= 200 and _PASSTHROUGH_CODE_LIST_RE.match(s):
+        # Heuristic: must contain at least one digit OR one separator —
+        # rules out plain lowercase words.
+        if _re.search(r"[\d,;\-/]", s):
+            return True
     return False
 
 

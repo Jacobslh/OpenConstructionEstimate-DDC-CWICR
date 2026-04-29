@@ -1,0 +1,51 @@
+name: Functional 30-work suite
+
+# 30 canonical scenarios run through the cost estimator using the new
+# track's Qdrant collection. Heavy (~15 min per track, ~$3-5 in GPT-judge
+# costs), so it runs only on workflow_dispatch.
+
+on:
+  workflow_dispatch:
+    inputs:
+      track:
+        description: "Target track region (e.g. AU_SYDNEY)"
+        required: true
+        type: string
+
+jobs:
+  suite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    services:
+      qdrant:
+        image: qdrant/qdrant:latest
+        ports:
+          - 6333:6333
+    env:
+      QDRANT_URL: http://localhost:6333
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas pyarrow pyyaml openai qdrant-client jinja2
+      - name: Restore embeddings snapshot
+        working-directory: ${{ inputs.track }}___DDC_CWICR
+        run: |
+          curl -X POST \
+            -H "Content-Type:application/octet-stream" \
+            --data-binary @"${{ inputs.track }}_workitems_costs_resources_EMBEDDINGS_3072_DDC_CWICR.snapshot" \
+            "$QDRANT_URL/collections/ddc_${{ inputs.track }}/snapshots/upload"
+      - name: Run 30-work suite
+        working-directory: 0_Workflow and Pipelines CWICR/python/11-country-track-builder
+        run: |
+          python run_functional_suite.py --track "${{ inputs.track }}"
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: functional-${{ inputs.track }}
+          path: 0_Workflow and Pipelines CWICR/python/11-country-track-builder/validation_reports/

@@ -138,7 +138,10 @@ def _stream_to_xlsx(
                 if isinstance(v, (bool, int, float)):
                     ws.write(row_offset + r_local, c, v)
                 else:
-                    ws.write(row_offset + r_local, c, str(v))
+                    s = str(v)
+                    if len(s) > 32700:
+                        s = s[:32700] + "...[truncated]"
+                    ws.write(row_offset + r_local, c, s)
         row_offset += end - start
 
     if freeze:

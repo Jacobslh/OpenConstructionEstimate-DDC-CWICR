@@ -1,4 +1,3 @@
-DDC CWICR placeholder for ID_JAKARTA_workitems_costs_resources_DDC_CWICR_SIMPLE.xlsx
-This placeholder ships the on-disk metadata for the ID track only.
-Regenerate the real artefact from the parquet via the country-track-builder
-pipeline (see DATA_DICTIONARY.md).
+version https://git-lfs.github.com/spec/v1
+oid sha256:b951011bc308bcf4e839646da922a462fdbf5c693dcd6daa3f6fba423ff7d431
+size 269223611

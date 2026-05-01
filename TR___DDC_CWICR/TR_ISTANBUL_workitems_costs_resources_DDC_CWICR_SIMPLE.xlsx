@@ -1,4 +1,3 @@
-DDC CWICR placeholder for TR_ISTANBUL_workitems_costs_resources_DDC_CWICR_SIMPLE.xlsx
-This placeholder ships the on-disk metadata for the TR track only.
-Regenerate the real artefact from the parquet via the country-track-builder
-pipeline (see DATA_DICTIONARY.md).
+version https://git-lfs.github.com/spec/v1
+oid sha256:422f39492b67af5646c31e3b641d7d229b2ea9fbcc4f3437ba2c9a5da29a2565
+size 268308403

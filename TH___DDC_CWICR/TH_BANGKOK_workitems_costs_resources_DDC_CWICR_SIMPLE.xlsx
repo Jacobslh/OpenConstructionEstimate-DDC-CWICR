@@ -1,4 +1,3 @@
-DDC CWICR placeholder for TH_BANGKOK_workitems_costs_resources_DDC_CWICR_SIMPLE.xlsx
-This placeholder ships the on-disk metadata for the TH track only.
-Regenerate the real artefact from the parquet via the country-track-builder
-pipeline (see DATA_DICTIONARY.md).
+version https://git-lfs.github.com/spec/v1
+oid sha256:c717b327ffc40266db4605e732862a4a175ef0a38c9a64cbd9cf35c3472b7fcc
+size 295402134

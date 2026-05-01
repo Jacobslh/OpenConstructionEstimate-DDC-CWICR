@@ -1,4 +1,3 @@
-DDC CWICR placeholder for VI_HANOI_workitems_costs_resources_DDC_CWICR_SIMPLE.xlsx
-This placeholder ships the on-disk metadata for the VI track only.
-Regenerate the real artefact from the parquet via the country-track-builder
-pipeline (see DATA_DICTIONARY.md).
+version https://git-lfs.github.com/spec/v1
+oid sha256:16ba4779b28859d0b18b805e5f904039a39fc67921e22b5878828f602c5d78c8
+size 275571138

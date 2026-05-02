@@ -1,4 +1,3 @@
-DDC CWICR placeholder for AU_SYDNEY_workitems_costs_resources_DDC_CWICR_SIMPLE.xlsx
-This placeholder ships the on-disk metadata for the AU track only.
-Regenerate the real artefact from the parquet via the country-track-builder
-pipeline (see DATA_DICTIONARY.md).
+version https://git-lfs.github.com/spec/v1
+oid sha256:d09304d27d4d70d9ff39d59fb3014cd998734ab0bf6a9b3050714ada34a7b36d
+size 265938404
